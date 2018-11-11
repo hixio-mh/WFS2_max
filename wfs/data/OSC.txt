@@ -1,0 +1,295 @@
+﻿WFS OSC
+
+default receive port: 8050
+defaul send port: 8051
+
+get: sends back once the requested value(s)
+stream : streams continuously the requested value(s)
+
+
+CONFIG
+
+/wfs/config/stageWidth [f]
+/wfs/config/stageDepth [f]
+/wfs/config/stageHeight [f]
+/wfs/config/stageDimensions [f] [f] [f]
+/wfs/config/originWidth [f]
+/wfs/config/originDepth [f]
+/wfs/config/originHeight [f]
+/wfs/config/originPosition [f] [f] [f]
+/wfs/config/flipX [i]
+/wfs/config/flipY [i]
+/wfs/config/flipZ [i]
+/wfs/config/flipXYZ [i] [i] [i]
+/wfs/config/speedOfSound [f]
+/wfs/config/temperature [f]
+/wfs/config/HassEffect [f]
+/wfs/config/globalLatency [f]
+/wfs/config/masterLevel [f]
+/wfs/config/OSChost [i i i i] (configures the destination IP where to send OSC from WFS system)
+/wfs/config/OSChost/confirmHost
+/wfs/config/OSCport [i] (configures the destination port where to send OSC from WFS system)
+/wfs/config/OSCport/confirmPort
+
+/wfs/config/get/all
+/wfs/config/get/stageWidth
+/wfs/config/get/stageDepth
+/wfs/config/get/stageHeight
+/wfs/config/get/stageDimensions
+/wfs/config/get/originWidth
+/wfs/config/get/originDepth
+/wfs/config/get/originHeight
+/wfs/config/get/originPosition
+/wfs/config/get/flipX
+/wfs/config/get/flipY
+/wfs/config/get/flipZ
+/wfs/config/get/flipXYZ
+/wfs/config/get/speedOfSound
+/wfs/config/get/temperature
+/wfs/config/get/HassEffect
+/wfs/config/get/globalLatency
+/wfs/config/get/masterLevel
+
+
+NAMES
+
+/wfs/names/input/label [i] [string]
+/wfs/names/input/reset [i]
+/wfs/names/output/label [i] [string]
+/wfs/names/output/reset [i]
+/wfs/names/reverb/label [i] [string]
+/wfs/names/reverb/reset [i]
+
+/wfs/names/input/get all
+/wfs/names/input/get [i]
+/wfs/names/output/get all
+/wfs/names/output/get [i]
+/wfs/names/reverb/get all
+/wfs/names/reverb/get [i]
+
+
+SNAPSHOTS
+
+/wfs/saveLoad/snapshot/store [string: date_time]
+/wfs/saveLoad/snapshot/recall [string: date_time]
+
+
+OUTPUTS
+
+/wfs/selectIO/output [i]
+
+/wfs/output/#/latency [f] ms
+/wfs/output/#/attenuation [f] dB
+/wfs/output/#/positionX [f] m
+/wfs/output/#/positionY [f] m
+/wfs/output/#/positionZ [f] m
+/wfs/output/#/positionXYZ [f] [f] [f] m m m
+/wfs/output/#/orientation [i] -180°~180°
+/wfs/output/#/angleOn [i] 1°~180°
+/wfs/output/#/angleOff [i] 0°~179°
+/wfs/output/#/HFdamping [f] dB/m
+/wfs/output/#/group [i] 0: off / 1~5 / 6: reverb feeds
+/wfs/output/#/miniLatencyEnable [0/1]
+/wfs/output/#/liveSourceEnable [0/1] (not for reverb feeds)
+/wfs/output/#/distanceAttenuationPercent [i] 0~200%
+
+/wfs/output/#/get/all
+/wfs/output/#/get/latency
+/wfs/output/#/get/attenuation
+/wfs/output/#/get/positionX
+/wfs/output/#/get/positionY
+/wfs/output/#/get/positionZ
+/wfs/output/#/get/positionXYZ
+/wfs/output/#/get/orientation
+/wfs/output/#/get/angleOn
+/wfs/output/#/get/angleOff
+/wfs/output/#/get/HFdamping
+/wfs/output/#/get/group
+/wfs/output/#/get/miniLatencyEnable  
+/wfs/output/#/get/liveSourceEnable
+/wfs/output/#/get/distanceAttenuationPercent
+
+
+REVERB FEEDS
+
+/wfs/reverbFeed/#/latency [f] ms
+/wfs/reverbFeed/#/attenuation [f] dB
+/wfs/reverbFeed/#/positionX [f] m
+/wfs/reverbFeed/#/positionY [f] m
+/wfs/reverbFeed/#/positionZ [f] m
+/wfs/reverbFeed/#/positionXYZ [f] [f] [f] m m m
+/wfs/reverbFeed/#/orientation [i] -180°~180°
+/wfs/reverbFeed/#/angleOn [i] 1°~180°
+/wfs/reverbFeed/#/angleOff [i] 0°~179°
+/wfs/reverbFeed/#/HFdamping [f] dB/m
+/wfs/reverbFeed/#/miniLatencyEnable [0/1]
+/wfs/reverbFeed/#/distanceAttenuationPercent [i] 0~200%
+
+/wfs/reverbFeed/#/get/all
+/wfs/reverbFeed/#/get/latency
+/wfs/reverbFeed/#/get/attenuation
+/wfs/reverbFeed/#/get/positionX
+/wfs/reverbFeed/#/get/positionY
+/wfs/reverbFeed/#/get/positionZ
+/wfs/reverbFeed/#/get/positionXYZ
+/wfs/reverbFeed/#/get/orientation
+/wfs/reverbFeed/#/get/angleOn
+/wfs/reverbFeed/#/get/angleOff
+/wfs/reverbFeed/#/get/HFdamping
+/wfs/reverbFeed/#/get/miniLatencyEnable
+/wfs/reverbFeed/#/get/distanceAttenuationPercent
+
+
+INPUTS
+
+/wfs/selectIO/input [i]
+
+/wfs/input/#/latency [f (f)] ms / optional transfer time in seconds
+/wfs/input/#/attenuation [f (f)] dB / optional transfer time in seconds
+/wfs/input/#/curvature [0/1]
+/wfs/input/#/control [i] 0 matrix, 1 manual, 2-11 Lemur 1-0
+/wfs/input/#/positionX [f] m
+/wfs/input/#/positionY [f] m
+/wfs/input/#/positionZ [f] m
+/wfs/input/#/positionXYZ [f] [f] [f] m m m
+/wfs/input/#/constraintX [i]
+/wfs/input/#/constraintY [i]
+/wfs/input/#/constraintZ [i]
+/wfs/input/#/constraintXYZ [i] [i] [i]
+/wfs/input/#/flipX [i]
+/wfs/input/#/flipY [i]
+/wfs/input/#/flipZ [i]
+/wfs/input/#/flipXYZ [i] [i] [i]
+/wfs/input/#/heightFactor [i (f)] % / optional transfer time in seconds
+/wfs/input/#/maxSpeed [f (f)] m/s (0: off) / optional transfer time in seconds
+/wfs/input/#/distanceAttenuation [f (f)] dB/m / optional transfer time in seconds
+/wfs/input/#/directivity [i (f)] 2°~360° / optional transfer time in seconds
+/wfs/input/#/rotation [i (f)] -180°~180° / optional transfer time in seconds
+/wfs/input/#/HFshelf [f (f)] dB / optional transfer time in seconds
+/wfs/input/#/levelMap [i:levelMapActive] [i: flipX] [i: flipY] [i:levelActive] [i:heightActive] [i:heightMode] [i:HFdampingActive] [f:HFdamping]
+/wfs/input/#/liveSource [i f f i] active ; radius ; attenuation ; shape
+/wfs/input/#/liveSourceActive [1/0]
+/wfs/input/#/liveSourceRadius [f] optional transfer time in seconds
+/wfs/input/#/liveSourceAttenuation [f] optional transfer time in seconds
+/wfs/input/#/liveSourceShape [i] 0:Linear, 1:Log, 2:Square x², 3:Sine
+/wfs/input/#/mutes [i_list]
+/wfs/input/#/delays [f_list] ms
+/wfs/input/#/levels [f_list]
+/wfs/input/#/HFdampings [f_list]
+
+/wfs/input/#/muteMacro [i] 1: mute all, 2: unmute all, 3: invert, 4: odd channels, 5: even channels, 6: first half, 7: second half, 8: mute output group 1, 9: mute output group 1, 10: mute output group 2, 11: mute output group 2, 12: mute output group 3, 13: mute output group 3, 14: mute output group 4, 15: mute output group 4, 16: mute output group 5, 17: mute output group 5 , 18: mute output group 6 (reverb feeds), 19: mute output group 6 (reverb feeds)
+
+/wfs/input/#/get/all
+/wfs/input/#/get/latency
+/wfs/input/#/get/attenuation
+/wfs/input/#/get/curvature
+/wfs/input/#/get/control
+/wfs/input/#/get/positionX
+/wfs/input/#/get/positionY
+/wfs/input/#/get/positionZ
+/wfs/input/#/get/positionXYZ
+/wfs/input/#/get/constraintX
+/wfs/input/#/get/constraintY
+/wfs/input/#/get/constraintZ
+/wfs/input/#/get/constraintXYZ
+/wfs/input/#/get/flipX
+/wfs/input/#/get/flipY
+/wfs/input/#/get/flipZ
+/wfs/input/#/get/flipXYZ
+/wfs/input/#/get/heightFactor
+/wfs/input/#/get/maxSpeed
+/wfs/input/#/get/distanceAttenuation
+/wfs/input/#/get/directivity
+/wfs/input/#/get/rotation
+/wfs/input/#/get/HFshelf
+/wfs/input/#/get/levelMap
+/wfs/input/#/get/liveSource
+/wfs/input/#/get/mutes
+/wfs/input/#/get/delays
+/wfs/input/#/get/levels
+/wfs/input/#/get/HFdampings
+
+/wfs/input/#/stream/all [0/1]
+/wfs/input/#/stream/latency [0/1]
+/wfs/input/#/stream/attenuation [0/1]
+/wfs/input/#/stream/curvature [0/1]
+/wfs/input/#/stream/control [0/1]
+/wfs/input/#/stream/positionX [0/1]
+/wfs/input/#/stream/positionY [0/1]
+/wfs/input/#/stream/positionZ [0/1]
+/wfs/input/#/stream/positionXYZ [0/1]
+/wfs/input/#/stream/constraintX [0/1]
+/wfs/input/#/stream/constraintY [0/1]
+/wfs/input/#/stream/constraintZ [0/1]
+/wfs/input/#/stream/constraintXYZ [0/1]
+/wfs/input/#/stream/flipX [0/1]
+/wfs/input/#/stream/flipY [0/1]
+/wfs/input/#/stream/flipZ [0/1]
+/wfs/input/#/stream/flipXYZ [0/1]
+/wfs/input/#/stream/heightFactor [0/1]
+/wfs/input/#/stream/maxSpeed [0/1]
+/wfs/input/#/stream/distanceAttenuation [0/1]
+/wfs/input/#/stream/directivity [0/1]
+/wfs/input/#/stream/rotation [0/1]
+/wfs/input/#/stream/HFshelf [0/1]
+/wfs/input/#/stream/levelMap [0/1]
+/wfs/input/#/stream/liveSource [0/1]
+/wfs/input/#/stream/mutes [0/1]
+/wfs/input/#/stream/delays [0/1]
+/wfs/input/#/stream/levels [0/1]
+/wfs/input/#/stream/HFdampings [0/1]
+
+/wfs/input/#/curveXYZ [f: destination x]  [f: destination y] [f: destination z] [O absolute/1 relative] [f: curve: 0.0 straight line, -1.0< <0.0 curve downstage, 0.0> >1.0 curve upstage] [f: time in seconds] [f: 0.0 constant speed ~ 1.0 smoothed speed]
+/wfs/input/#/curveXYZ/stop
+/wfs/input/#/curveXYZ/pause [0/1]
+/wfs/input/#/curveXYZ/moveSpeed [i] (0 to 200 %)
+
+/wfs/input/#/lfo/active [0/1]
+/wfs/input/#/lfo/lfo [f: period in seconds] [i: phase 0∞~360∞]
+/wfs/input/#/lfo/x [i: 0~360∞ phase for X] [i: shape* for X] [f: amplitude for X]
+/wfs/input/#/lfo/y [i: 0~360∞ phase for Y] [i: shape* for Y] [f: amplitude for Y]
+/wfs/input/#/lfo/z [i: 0~360∞ phase for Z] [i: shape* for Z] [f: amplitude for Z]
+/wfs/input/#/lfo/shapeXYZ [i] [i] [i] (shapes* for X Y Z)
+/wfs/input/#/lfo/xyz [i] [i] [i] [i] [i] [i] [f] [f] [f] (0~360∞ phases for X Y Z ; shapes* for X Y Z ; amplitudes for X Y Z)
+/wfs/input/#/lfo/lfoXYZ [f: main LFO period in seconds] [i: 0~360∞ main LFO phase] [i] [i] [i] [i] [i] [i] [f] [f] [f] (0~360° phases for X Y Z ; shapes* for X Y Z ; amplitudes for X Y Z)
+* shape: 0 Off / 1 Sine / 2 Square / 3 Saw / 4 Triangle / 5 Keystone / 6 Log / 7 Exponential / 8 Random
+
+/wfs/input/#/jitter [f] amplitude 0:off
+
+/wfs/input/#/offset [f] [f] [f]
+
+
+REVERB RETURNS
+
+/wfs/selectIO/reverb [i]
+
+/wfs/reverbReturn/#/latency [f] ms
+/wfs/reverbReturn/#/attenuation [f]s
+/wfs/reverbReturn/#/curvature [0/1]
+/wfs/reverbReturn/#/positionX [f] m
+/wfs/reverbReturn/#/positionY [f] m
+/wfs/reverbReturn/#/positionZ [f] m
+/wfs/reverbReturn/#/positionXYZ [f] [f] [f] m m m
+/wfs/reverbReturn/#/heightFactor [i] %
+/wfs/reverbReturn/#/distanceAttenuation [f] dB/m
+/wfs/reverbReturn/#/directivity [i] 2°~360°
+/wfs/reverbReturn/#/rotation [i] -180°~180°
+/wfs/reverbReturn/#/HFshelf [f] dB
+/wfs/reverbReturn/#/mutes [i_list]
+
+/wfs/reverbReturn/#/muteMacro [i] 1: mute all, 2: unmute all, 3: invert, 4: odd channels, 5: even channels, 6: first half, 7: second half, 8: mute output group 1, 9: mute output group 1, 10: mute output group 2, 11: mute output group 2, 12: mute output group 3, 13: mute output group 3, 14: mute output group 4, 15: mute output group 4, 16: mute output group 5, 17: mute output group 5
+
+/wfs/reverbReturn/#/get/all
+/wfs/reverbReturn/#/get/latency
+/wfs/reverbReturn/#/get/attenuation
+/wfs/reverbReturn/#/get/curvature
+/wfs/reverbReturn/#/get/positionX
+/wfs/reverbReturn/#/get/positionY
+/wfs/reverbReturn/#/get/positionZ
+/wfs/reverbReturn/#/get/positionXYZ
+/wfs/reverbReturn/#/get/heightFactor
+/wfs/reverbReturn/#/get/distanceAttenuation
+/wfs/reverbReturn/#/get/directivity
+/wfs/reverbReturn/#/get/rotation
+/wfs/reverbReturn/#/get/HFshelf
+/wfs/reverbReturn/#/get/mutes

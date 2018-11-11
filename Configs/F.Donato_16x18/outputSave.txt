@@ -1,0 +1,36 @@
+outputNames 1 FrontF_ext_L
+outputNames 2 FrontF_ext_R
+outputNames 3 FrontF_med_L
+outputNames 4 FrontF_med_R
+outputNames 5 FrontF_int_L
+outputNames 6 FrontF_int_R
+outputNames 7 12xt_L
+outputNames 8 12xt_R
+outputNames 9 12xt_C
+outputNames 10 108_ext_L
+outputNames 11 108_ext_R
+outputNames 12 108_int_L
+outputNames 13 108_int_R
+outputNames 14 Sub_L
+outputNames 15 Sub_C
+outputNames 16 Sub_R
+outputNames 17 HeadPhone_L
+outputNames 18 HeadPhone_R
+1 0.000 0.000 -5.000 0.000 0.000 -0.050
+2 0.000 0.000 5.000 0.000 0.000 -0.050
+3 0.000 0.000 -3.000 0.000 0.000 -0.050
+4 0.000 0.000 3.000 0.000 0.000 -0.050
+5 0.000 0.000 -1.000 0.000 0.000 -0.050
+6 0.000 0.000 1.000 0.000 0.000 -0.050
+7 -9.000 0.000 -6.400 0.000 5.000 -0.050
+8 -9.000 0.000 6.400 0.000 5.000 -0.050
+9 -9.000 0.000 0.000 0.000 5.000 -0.050
+10 -15.000 0.000 -4.500 0.000 5.000 -0.050
+11 -15.000 0.000 4.500 0.000 5.000 -0.050
+12 -15.000 0.000 -1.500 0.000 5.000 -0.050
+13 -15.000 0.000 1.500 0.000 5.000 -0.050
+14 0.000 0.000 -7.000 0.500 0.000 0.000
+15 0.000 0.000 0.000 0.500 0.000 0.000
+16 0.000 0.000 7.000 0.500 0.000 0.000
+17 0.000 0.000 -0.100 0.000 0.000 0.000
+18 0.000 0.000 0.100 0.000 0.000 0.000

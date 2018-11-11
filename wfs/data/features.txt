@@ -1,0 +1,70 @@
+
+updated 2018 10 12
+contact: Pierre-Olivier Boulant po.boulant@free.fr
+
+
+= = = DEPENDENCIES = = =
+
+Cycling74 Max 7 (developed on 7.3.*/8.0.*)
+Java (64bit if Max7-64bit / 32bit if Max7-32bit)
+ 
+
+= = = = FEATURES = = = =
+
+- client (interface only) & processor (no interface) to off-load interface to a second computer or all-in-one system
+- automatic reconfiguration of system up to 64 inputs, 64 outputs and 16 reverb feeds and return
+- automatic detection of client and processor IP addresses on the network
+- configurable multithreaded processing
+- fullscreen interface with locking audio processing switch
+
+Interface:
+- system settings (I/O channels, temperature/speed of sound, Haas effect, global system delay) 
+- venue/stage settings (size, stage origin)
+- output channel interface (specific latency, attenuation, position, HF damping, groups, minimal latency enable, live source attenuation enable, distance attenuation factor)
+- reverb feed channel interface (specific latency, attenuation, position, HF damping, minimal latency enable, distance attenuation factor)
+- input channel interface (specific latency, attenuation, position, height factor, maximum speed, distance attenuation, directional HF shelving, maps, live source attenuation)
+- reverb return channel interface (specific latency, attenuation, position, height factor, distance attenuation, directional HF shelving)
+- input, output and reverb selector
+- input, output and reverb naming
+- manual save and autosave systems, output (including reverb feeds) and input settings (including reverb returns)
+- reloading system, output (including reverb feeds) and input settings (including reverb returns)
+- create and recall snapshots of input (including reverb returns) settings from interface or OSC
+- auto-update of files with default new features' parameters
+
+For inputs only (not available for reverb returns):
+- option to restrict input position to stage dimensions (X Y Z)
+- mirror position of input relative to stage origin (X Y Z)
+- limit movement speed of inputs
+- offset source position (X Y Z)
+- LFO on source position (X Y Z)
+- jitter on source position (X Y Z)
+- source position movement (X Y Z) with constant or progressive start and curvature
+- global stop, pause and joystick to slow down or speed up movements
+
+Controls:
+- Lemur control of input position (not available for reverb returns)
+- external OSC control (config, names, outputs, inputs // set, get, stream)
+- change OSC remote IP and port with confirmation from the remote
+- keyboard selection of current channel ("i" for input, "o" for output or "r" for reverb feed and return - then type number and return / Space bar to select next input Shift+Space bar to select previous input)
+- keyboard shortcuts for Lemur tracker selection (1 ~ 0), deselection or reselection
+- keyboard shortcuts for positioning (arrows X & Y; page up/down: Z) with modifiers (no modifiers: 0.1m, shift: 1m, ctrl: 0.01m)
+- keyboard shortcuts follow X/Y/Z mirroring for selected channel
+- update input position when selecting a used tracker
+- update Lemur when selecting an unused tracker
+- update Lemur tracker position following keyboard arrows
+
+Position processing:
+- delay calculation/position
+- calculation of distances with a weighting of height (0~100%)
+- minimal delay option, only curvature
+- minimal delay can be enabled or not for each output or reverb feed
+- level calculation/position
+- full bandwidth attenuation with distance (input & reverb return parameters)
+- HF shelving depending on directivity of source and relative angle to output (input & reverb return parameters)
+- live source attenuation with proximity of an input to an output (radius, level, curve) (does not affect reverb feed or return channels)
+- live source attenuation can be enabled or not for each output (always disabled on reverb feeds)
+- air damping of high frequency with distance (output & reverb feed parameter)
+- input and reverb return mutes/output and reverb feeds (only for inputs) & macros
+- reverb return channels cannot send to a reverb feed channel
+- speaker & reverb feed direction and muting of sources in front of the output. possibility to surround the audience with speakers
+- level, height, HF damping maps for inputs/position (not available for reverb return channels)
